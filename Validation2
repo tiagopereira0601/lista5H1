@@ -1,0 +1,21 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
+
+namespace WebApp.Models
+{
+    public class CodigoProdutoValidationAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value == null) return new ValidationResult("Código do produto é obrigatório");
+
+            string codigo = value.ToString();
+            var regex = new Regex(@"^[A-Z]{3}-\d{4}$");
+
+            if (!regex.IsMatch(codigo))
+                return new ValidationResult("O código deve seguir o formato 'AAA-1234'");
+
+            return ValidationResult.Success;
+        }
+    }
+}
