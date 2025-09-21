@@ -1,0 +1,68 @@
+Lista – Desenvolvimento Web
+Questão 1
+
+Três motivos importantes para validar dados em uma API:
+
+Segurança: impede ataques como SQL Injection, XSS e envio de dados maliciosos.
+
+Consistência: garante que as informações armazenadas estejam corretas e dentro do padrão esperado (ex.: CPF válido, email bem formatado).
+
+Confiabilidade da aplicação: evita erros de processamento e melhora a experiência do usuário, já que a API só aceita dados válidos.
+
+Questão 2
+a) Cenário 1 – Cadastro de Cliente
+
+Nome: mínimo 3 caracteres, obrigatório.
+
+CPF: obrigatório, deve ter 11 dígitos, apenas números, verificar dígitos válidos.
+
+Data de Nascimento: obrigatório, deve ser uma data válida, maior de 18 anos.
+
+Email: obrigatório, formato válido (ex.: teste@email.com
+).
+
+Telefone: obrigatório, formato (DDD + número), apenas números.
+
+Senha: obrigatória, mínimo 6 caracteres, deve conter letra maiúscula, minúscula e número.
+
+CEP: obrigatório, 8 dígitos numéricos.
+
+Rua: obrigatório, mínimo 3 caracteres.
+
+Bairro: obrigatório, mínimo 3 caracteres.
+
+Cidade: obrigatório, mínimo 2 caracteres.
+
+Estado: obrigatório, deve ter 2 caracteres (sigla do estado, ex.: SP, RJ).
+
+b) Cenário 2 – Cadastro de Disciplina
+
+Nome: obrigatório, mínimo 3 caracteres.
+
+Carga horária: obrigatória, deve ser maior que 0.
+
+Objetivo: obrigatório, mínimo 10 caracteres.
+
+Ementa: obrigatória, mínimo 15 caracteres.
+
+Semestre: obrigatório, valor entre 1 e 12.
+
+Ano: obrigatório, não pode ser menor que o ano atual.
+
+Nome professor: obrigatório, mínimo 3 caracteres.
+
+Questão 3
+
+Comparação entre validação com if/else e Data Annotations:
+
+If/Else:
+
+Vantagens: flexível, pode personalizar regras complexas, sem depender de frameworks.
+
+Desvantagens: gera código repetitivo, difícil de manter, polui o controller ou service.
+
+Data Annotations:
+
+Vantagens: simples de usar, código mais limpo, centraliza as regras no modelo, integração fácil com ASP.NET.
+
+Desvantagens: pode limitar quando são necessárias validações muito específicas ou personalizadas, dependência de atributos pré-existentes.
