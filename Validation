@@ -1,0 +1,21 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
+
+namespace WebApp.Models
+{
+    public class RaValidationAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value == null) return new ValidationResult("RA é obrigatório");
+
+            string ra = value.ToString();
+            var regex = new Regex(@"^RA\d{6}$");
+
+            if (!regex.IsMatch(ra))
+                return new ValidationResult("RA deve começar com 'RA' seguido de 6 dígitos");
+
+            return ValidationResult.Success;
+        }
+    }
+}
